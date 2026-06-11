@@ -1,0 +1,214 @@
+.linkedinCard {
+  position: relative;
+  padding: 20px;
+  margin-bottom: 20px;
+  background: linear-gradient(135deg, var(--glass-bg) 0%, rgba(10, 102, 194, 0.08) 100%) !important;
+  border: 1px solid rgba(10, 102, 194, 0.25) !important;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  overflow: hidden;
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), 
+              box-shadow 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+              border-color 0.4s ease;
+}
+
+.linkedinCard:hover {
+  transform: translateY(-4px);
+  border-color: rgba(10, 102, 194, 0.45) !important;
+  box-shadow: 0 12px 35px rgba(10, 102, 194, 0.15), var(--glass-shadow);
+}
+
+.closeBtn {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s, color 0.2s;
+  opacity: 0.7;
+}
+
+.closeBtn:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: var(--text-main);
+  opacity: 1;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding-bottom: 8px;
+}
+
+/* Light theme adjustments for border */
+:global(.light-theme) .header {
+  border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+}
+
+.badge {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: #0077b5; /* LinkedIn brand color */
+}
+
+:global(.light-theme) .badge {
+  color: #0a66c2;
+}
+
+.linkedinIcon {
+  color: #0077b5;
+}
+
+:global(.light-theme) .linkedinIcon {
+  color: #0a66c2;
+}
+
+.externalLink {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.externalLink:hover {
+  color: var(--accent-color);
+  text-decoration: underline;
+}
+
+.profileBody {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.avatarContainer {
+  position: relative;
+  flex-shrink: 0;
+  width: 60px;
+  height: 60px;
+}
+
+.avatarGradient {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 1.3rem;
+  background: linear-gradient(135deg, #0a66c2 0%, #00b4db 100%);
+  box-shadow: 0 4px 12px rgba(10, 102, 194, 0.3);
+  letter-spacing: 0.5px;
+}
+
+.activePulse {
+  position: absolute;
+  bottom: 2px;
+  right: 2px;
+  width: 12px;
+  height: 12px;
+  background-color: #10b981; /* Active online indicator */
+  border: 2px solid var(--glass-bg);
+  border-radius: 50%;
+  box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.4);
+}
+
+.profileDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex: 1;
+  min-width: 0; /* Enable text truncation in child elements if needed */
+}
+
+.profileName {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text-main);
+  margin: 0;
+}
+
+.profileHeadline {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin: 0 0 6px 0;
+  line-height: 1.35;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.metaRow {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  opacity: 0.9;
+  margin-top: 1px;
+}
+
+.metaIcon {
+  color: var(--accent-color);
+  opacity: 0.8;
+  flex-shrink: 0;
+}
+
+.metaText {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.footer {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  margin-top: 6px;
+  padding-top: 10px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+:global(.light-theme) .footer {
+  border-top: 1px solid rgba(15, 23, 42, 0.08);
+}
+
+.sparkleIcon {
+  color: #f59e0b;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.footerText {
+  font-size: 0.72rem;
+  line-height: 1.4;
+  color: var(--text-muted);
+}
+
+.footerText strong {
+  color: var(--text-main);
+  font-weight: 600;
+}

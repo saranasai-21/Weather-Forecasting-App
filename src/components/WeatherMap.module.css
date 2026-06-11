@@ -1,0 +1,103 @@
+.mapWrapper {
+  width: 100%;
+  margin-bottom: 24px;
+  overflow: hidden;
+  transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  flex-direction: column;
+}
+
+.mapHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px;
+  background: var(--input-bg);
+  border-bottom: 1px solid var(--glass-border);
+}
+
+.title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.mapBtn {
+  background: var(--input-bg);
+  border: 1px solid var(--glass-border);
+  color: var(--text-main);
+  padding: 6px 12px;
+  border-radius: 30px;
+  font-family: inherit;
+  font-size: 0.8rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.mapBtn:hover {
+  background: var(--card-hover-bg);
+  border-color: var(--glass-border-hover);
+}
+
+.activeBtn {
+  background: var(--accent-color);
+  color: white !important;
+  border-color: var(--accent-color);
+  box-shadow: 0 4px 12px var(--accent-glow);
+}
+
+.mapContainer {
+  width: 100%;
+  height: 300px;
+  position: relative;
+  z-index: 1;
+}
+
+.warningOverlay {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  right: 10px;
+  background: #0f172a;
+  border: 1px solid rgba(239, 68, 68, 0.4);
+  color: #f8fafc;
+  padding: 8px 12px;
+  border-radius: 10px;
+  font-size: 0.75rem;
+  z-index: 1000; /* Leaflet overlays are 400-800 */
+  text-align: center;
+}
+
+.warningLink {
+  color: #60a5fa;
+  text-decoration: underline;
+}
+
+.popupText {
+  color: #f8fafc;
+  font-family: var(--font-sans);
+}
+
+.popupCity {
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin-bottom: 2px;
+  display: block;
+}
+
+.popupTemp {
+  font-size: 0.8rem;
+  color: #93c5fd;
+}

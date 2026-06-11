@@ -1,0 +1,221 @@
+.container {
+  padding: 24px;
+  width: 100%;
+}
+
+.title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 16px;
+  color: var(--text-main);
+  letter-spacing: -0.2px;
+}
+
+.scrollWrapper {
+  display: flex;
+  gap: 14px;
+  overflow-x: auto;
+  padding-bottom: 8px;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  width: 100%;
+  max-width: 100%;
+}
+
+/* Custom horizontal scrollbar thumb effect */
+.scrollWrapper::-webkit-scrollbar,
+.subHourlyWrapper::-webkit-scrollbar {
+  height: 6px;
+}
+
+.scrollWrapper::-webkit-scrollbar-track,
+.subHourlyWrapper::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 10px;
+}
+
+.scrollWrapper::-webkit-scrollbar-thumb,
+.subHourlyWrapper::-webkit-scrollbar-thumb {
+  background: var(--glass-border);
+  border-radius: 10px;
+  transition: background-color 0.2s ease;
+}
+
+.scrollWrapper::-webkit-scrollbar-thumb:hover,
+.subHourlyWrapper::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-color);
+}
+
+.dayCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  min-width: 110px;
+  padding: 18px 12px;
+  background: var(--input-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.dayCard:hover {
+  background: var(--card-hover-bg);
+  transform: scale(1.05) translateY(-4px);
+  border-color: var(--accent-color);
+}
+
+.dayCardActive {
+  background: var(--accent-color) !important;
+  border-color: var(--accent-color) !important;
+  box-shadow: 0 0 15px var(--accent-glow) !important;
+}
+
+.dayCardActive .dayName,
+.dayCardActive .maxTemp,
+.dayCardActive .minTemp,
+.dayCardActive .rainChance {
+  color: #ffffff !important;
+}
+
+.dayName {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-main);
+  margin-bottom: 10px;
+}
+
+.rainChance {
+  font-size: 0.75rem;
+  color: #60a5fa;
+  margin-top: 4px;
+  font-weight: 500;
+}
+
+.tempRange {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-top: 10px;
+  font-size: 0.95rem;
+}
+
+.maxTemp {
+  font-weight: 600;
+  color: var(--text-main);
+}
+
+.minTemp {
+  font-weight: 400;
+  color: var(--text-muted);
+}
+
+/* Expanding Detail Panel */
+.detailPanel {
+  margin-top: 16px;
+  background: var(--input-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: 20px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.panelTitle {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--accent-color);
+  border-bottom: 1px solid var(--glass-border);
+  padding-bottom: 6px;
+}
+
+.detailGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+.detailCard {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  padding: 10px;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+}
+
+.detailLabel {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  letter-spacing: 0.5px;
+}
+
+.detailVal {
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin-top: 4px;
+}
+
+/* Sub-Hourly scroll inside detail tray */
+.subHourlyWrapper {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  padding-bottom: 6px;
+  width: 100%;
+  max-width: 100%;
+}
+
+.subHourlyItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 65px;
+  padding: 8px;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: 12px;
+  flex-shrink: 0;
+  font-size: 0.75rem;
+}
+
+.subHourlyTime {
+  color: var(--text-muted);
+  font-size: 0.65rem;
+}
+
+.subHourlyTemp {
+  font-weight: 600;
+  margin-top: 4px;
+}
+
+@media (max-width: 768px) {
+  .detailGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .container {
+    padding: 16px;
+  }
+  .dayCard {
+    min-width: 95px;
+    padding: 14px 10px;
+  }
+  .dayName {
+    font-size: 0.85rem;
+  }
+  .tempRange {
+    font-size: 0.85rem;
+    gap: 4px;
+  }
+  .detailGrid {
+    grid-template-columns: 1fr;
+  }
+}

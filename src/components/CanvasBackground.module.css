@@ -1,0 +1,48 @@
+.canvasContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -2;
+  transition: background 1.5s ease-in-out;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+/* Gradients mapped to conditions */
+.clear_day {
+  background: linear-gradient(135deg, #FF6B35 0%, #F7C948 50%, #87CEEB 100%);
+}
+
+.clear_night {
+  background: linear-gradient(135deg, #0a0a1a 0%, #1a1a3e 50%, #0d0d2b 100%);
+}
+
+.rain {
+  background: linear-gradient(135deg, #2c3e50 0%, #34495e 50%, #1a252f 100%);
+}
+
+.snow {
+  background: linear-gradient(135deg, #e8f4f8 0%, #b8d4e8 50%, #8fb8d0 100%);
+}
+
+.thunderstorm {
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f0f1a 100%);
+}
+
+.cloudy {
+  background: linear-gradient(135deg, #636e72 0%, #74b9ff 50%, #a29bfe 100%);
+}
+
+.foggy {
+  background: linear-gradient(135deg, #7f8c8d 0%, #bdc3c7 50%, #95a5a6 100%);
+}
+
+.canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}

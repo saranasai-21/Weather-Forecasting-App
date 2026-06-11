@@ -1,0 +1,113 @@
+.container {
+  padding: 24px;
+  margin-bottom: 24px;
+  width: 100%;
+}
+
+.title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 16px;
+  color: var(--text-main);
+  letter-spacing: -0.2px;
+}
+
+.scrollWrapper {
+  display: flex;
+  gap: 14px;
+  overflow-x: auto;
+  padding-bottom: 8px;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  width: 100%;
+  max-width: 100%;
+}
+
+.hourlyItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 90px;
+  padding: 14px 10px;
+  background: var(--input-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: 16px;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.hourlyItem:hover {
+  background: var(--card-hover-bg);
+  transform: scale(1.05) translateY(-2px);
+  border-color: var(--accent-color);
+}
+
+/* Explicit Horizontal Scrollbar Custom Effects */
+.scrollWrapper::-webkit-scrollbar {
+  height: 6px;
+}
+
+.scrollWrapper::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 10px;
+}
+
+.scrollWrapper::-webkit-scrollbar-thumb {
+  background: var(--glass-border);
+  border-radius: 10px;
+  transition: background-color 0.2s ease;
+}
+
+.scrollWrapper::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-color);
+}
+
+.time {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+}
+
+.temp {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-top: 8px;
+  color: var(--text-main);
+}
+
+.rainChance {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: #60a5fa;
+  margin-top: 4px;
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.activeItem {
+  background: var(--accent-color) !important;
+  border-color: var(--accent-color) !important;
+  box-shadow: 0 4px 15px var(--accent-glow);
+}
+
+.activeItem .time,
+.activeItem .temp,
+.activeItem .rainChance {
+  color: #ffffff !important;
+}
+
+@media (max-width: 600px) {
+  .container {
+    padding: 16px;
+  }
+  .hourlyItem {
+    width: 80px;
+    padding: 10px 8px;
+  }
+  .temp {
+    font-size: 1rem;
+  }
+}
