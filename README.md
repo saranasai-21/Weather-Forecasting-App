@@ -5,7 +5,8 @@ A premium, responsive Weather Web App featuring sleek solid card designs, custom
 ---
 # 🌐 Live Deploy
 
-https://weather-forecasting-app-eta.vercel.app/
+[https://weather-forecasting-app-eta.vercel.app/](https://weather-forecasting-app-rho.vercel.app/)
+
 ## 🚀 How to Run the App
 
 1. **Install Dependencies**:
